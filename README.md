@@ -128,7 +128,7 @@ Credits
 License
 =======
 
-    Copyright 2014 Ink Applications
+    Copyright 2014 Ink Applications LLC
     Copyright 2012 Jake Wharton
     Copyright 2011 Patrik Åkerfeldt
     Copyright 2011 Francisco Figueiredo Jr.
