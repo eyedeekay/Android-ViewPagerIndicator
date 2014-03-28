@@ -82,20 +82,23 @@ a dependency:
 <dependency>
     <groupId>com.inkapplications.viewpagerindicator</groupId>
     <artifactId>library</artifactId>
-    <version>2.4.2</version>
+    <version>{version-here}</version>
     <type>aar</type>
 </dependency>
 ```
 
 Gradle:
 
-    compile 'com.inkapplications.viewpageindicator:library:2.4.2@aar'
+    compile 'com.inkapplications.viewpageindicator:library:{version-here}@aar'
 
 This project depends on the `ViewPager` class which is available in the
 [Android Support Library][2] or [ActionBarSherlock][3]. Details for
 including one of those libraries is available on their respecitve web sites.
 
-
+Support Library Support
+=======================
+VPI:2.4.3 -> v4:19.1.0
+VPI:2.4.2 -> v4:19.0.1
 
 
 Developed By
