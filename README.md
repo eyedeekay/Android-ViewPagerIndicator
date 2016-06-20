@@ -75,18 +75,6 @@ indicator widgets.
 You can include this project by [referencing it as a library project][8] in
 Eclipse or ant.
 
-If you are a Maven user you can easily include the library by specifying it as
-a dependency:
-
-```xml
-<dependency>
-    <groupId>com.inkapplications.viewpagerindicator</groupId>
-    <artifactId>library</artifactId>
-    <version>{version-here}</version>
-    <type>aar</type>
-</dependency>
-```
-
 Gradle:
 
     compile 'com.inkapplications.viewpageindicator:library:{version-here}@aar'
@@ -97,6 +85,7 @@ including one of those libraries is available on their respecitve web sites.
 
 Support Library Support
 =======================
+VIP:2.4.4 -> v4:24.0.0
 VPI:2.4.3 -> v4:19.1.0
 VPI:2.4.2 -> v4:19.0.1
 

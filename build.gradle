@@ -1,38 +1,43 @@
 ext {
-    MIN_SDK_VERSION = 4
-    TARGET_SDK_VERSION = 24
-    GROUP = hasProperty("group") ? getProperty("group") : "com.inkapplications.viewpageindicator"
-    VERSION = '2.4.4'
-    VERSION_CODE = 67
-    SONATYPE_URL = ""
-    IS_DEV_BUILD = false
-    IS_RELEASE_BUILD = false
-}
-
-//set build variables based on build type (release, continuous integration, development)
-if (hasProperty("release")) {
-    IS_RELEASE_BUILD = true
-    SONATYPE_URL = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-} else if (hasProperty("snapshot")) {
-    VERSION += "-SNAPSHOT"
-    SONATYPE_URL = "https://oss.sonatype.org/content/repositories/snapshots/"
-} else {
-    IS_DEV_BUILD = true
+    buildToolsVersion = '24.0.0'
+    compileSdkVersion = 24
+    minSdkVersion = 4
+    versionCode = 67
 }
 
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
     }
 }
 
 allprojects {
+    version = '2.4.4'
+    group = 'com.inkapplications.viewpageindicator'
+
+    apply from: "$rootDir/gradle/credentials.gradle"
+}
+
+subprojects {
     repositories {
-        mavenCentral()
+        jcenter()
     }
+}
+
+task tagRelease(type: Exec) {
+    description = 'Tag the release and push it to github'
+    group = 'Publishing'
+
+    commandLine 'bash', '-c',
+"""
+  git tag $version
+  git push -q https://${project.githubToken}@github.com/InkApplications/Android-ViewPagerIndicator.git $version > /dev/null 2>&1
+"""
 }
 
 apply plugin: 'android-reporting'
