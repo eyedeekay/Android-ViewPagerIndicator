@@ -1,2 +1,14 @@
-include ':library', ':sample'
+include ':library'
+include ':sample'
+
 rootProject.name = 'parent'
+
+def setBuildFile(projects) {
+    projects.each {
+        it.buildFileName = "${it.name}.gradle"
+        setBuildFile(it.children)
+    }
+}
+
+setBuildFile(rootProject.children)
+
