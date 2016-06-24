@@ -77,7 +77,16 @@ Eclipse or ant.
 
 Gradle:
 
-    compile 'com.inkapplications.viewpageindicator:library:{version-here}@aar'
+```groovy
+repositories {
+    jcenter()
+}
+
+dependencies {
+  compile 'com.inkapplications.viewpageindicator:library:{version-here}@aar'
+}
+
+```
 
 This project depends on the `ViewPager` class which is available in the
 [Android Support Library][2] or [ActionBarSherlock][3]. Details for
@@ -85,9 +94,9 @@ including one of those libraries is available on their respecitve web sites.
 
 Support Library Support
 =======================
-VIP:2.4.4 -> v4:24.0.0
-VPI:2.4.3 -> v4:19.1.0
-VPI:2.4.2 -> v4:19.0.1
+* VPI: 2.4.4 -> v4:24.0.0
+* VPI: 2.4.3 -> v4:19.1.0
+* VPI: 2.4.2 -> v4:19.0.1
 
 
 Developed By
