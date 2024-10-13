@@ -23,13 +23,13 @@ task androidJavadocs(type: Javadoc) {
 }
 
 task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-  classifier = 'javadoc'
   from androidJavadocs.destinationDir
+  archiveClassifier.set("javadoc")
 }
 
 task androidSourcesJar(type: Jar) {
-  classifier = 'sources'
   from android.sourceSets.main.java.source
+  archiveClassifier.set("source")
 }
 
 // add javadoc/source jar tasks as artifacts
@@ -46,10 +46,10 @@ publishing {
       artifact "${project.buildDir}/outputs/aar/${project.name}-release.aar"
 
       artifact androidJavadocsJar {
-        classifier 'javadoc'
+        archiveClassifier.set("javadoc")
       }
       artifact androidSourcesJar {
-        classifier 'source'
+        archiveClassifier.set("source")
       }
 
       pom.withXml {

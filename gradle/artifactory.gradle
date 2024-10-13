@@ -32,11 +32,11 @@ artifactory {
             publications ('dist')
         }
     }
-    resolve {
+    /*resolve {
         repository {
             repoKey = 'libs-release'
         }
-    }
+    }*/
 
 }
 

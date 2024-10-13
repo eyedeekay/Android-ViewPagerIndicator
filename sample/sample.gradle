@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile project(':library')
+    implementation project(':library')
 }
 
 android {
     compileSdkVersion project.compileSdkVersion
     buildToolsVersion project.buildToolsVersion
+
+    namespace = 'com.inkapplications.viewpageindicator.sample'
 
     defaultConfig {
         minSdkVersion project.minSdkVersion
