@@ -1,7 +1,7 @@
 ext {
     buildToolsVersion = '24.0.0'
-    compileSdkVersion = 24
-    minSdkVersion = 4
+    compileSdkVersion = 34
+    minSdkVersion = 21
     versionCode = 67
 }
 
@@ -19,6 +19,9 @@ buildscript {
         classpath 'com.android.tools.build:gradle:2.1.2'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:5.2.5'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+//        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
+
     }
 }
 
