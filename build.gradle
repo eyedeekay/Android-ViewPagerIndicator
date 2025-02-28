@@ -35,7 +35,9 @@ subprojects {
     repositories {
         mavenCentral()
         gradlePluginPortal()
-        google()
+        maven {
+            url 'https://maven.google.com'
+        }
     }
 }
 
