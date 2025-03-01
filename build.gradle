@@ -15,7 +15,9 @@ buildscript {
         maven {
             url = uri("https://nexus.web.cern.ch/nexus/content/repositories/public/")
         }
-        google()
+        maven {
+            url 'https://maven.google.com'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.2'
