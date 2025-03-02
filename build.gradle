@@ -57,3 +57,5 @@ task tagRelease(type: Exec) {
 }
 
 apply plugin: 'android-reporting'
+apply plugin: 'com.android.library'
+apply plugin: 'android-maven'
