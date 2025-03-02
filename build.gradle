@@ -59,4 +59,4 @@ task tagRelease(type: Exec) {
 apply plugin: 'android-reporting'
 apply plugin: 'com.android.library'
 apply plugin: 'android-maven'
-apply plugin: 'maven-publish'
+apply plugin: 'maven'
