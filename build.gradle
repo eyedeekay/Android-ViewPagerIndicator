@@ -20,7 +20,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:7.0.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
         classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
     }
@@ -58,5 +58,5 @@ task tagRelease(type: Exec) {
 
 apply plugin: 'android-reporting'
 //apply plugin: 'com.android.library'
-apply plugin: 'android-maven'
-apply plugin: 'maven'
+//apply plugin: 'android-maven'
+//apply plugin: 'maven'
