@@ -60,3 +60,6 @@ apply plugin: 'android-reporting'
 //apply plugin: 'com.android.library'
 //apply plugin: 'android-maven'
 //apply plugin: 'maven'
+plugins {
+    id 'maven-publish'
+}
