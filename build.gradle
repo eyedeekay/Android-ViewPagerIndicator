@@ -1,29 +1,34 @@
-ext {
-    buildToolsVersion = '30.0.2'
-    compileSdkVersion = 24
-    minSdkVersion = 4
-    versionCode = 67
-}
-
 buildscript {
     repositories {
-        //jcenter()
+        google()  // Required for Android plugins
         mavenCentral()
-        maven {
-            url = uri("https://plugins.gradle.org/m2/")
-        }
+        gradlePluginPortal()
         maven {
             url = uri("https://nexus.web.cern.ch/nexus/content/repositories/public/")
-        }
-        maven {
-            url 'https://maven.google.com'
         }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
-        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
+        //classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.29.0'
     }
+}
+
+/*plugins {
+    //id 'android-reporting'
+    id 'com.android.library' version '7.0.0'
+    id 'maven-publish'
+}*/
+
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+ext {
+    buildToolsVersion = '30.0.2'
+    compileSdkVersion = 24
+    minSdkVersion = 4
+    versionCode = 67
 }
 
 allprojects {
@@ -56,10 +61,3 @@ task tagRelease(type: Exec) {
 """
 }
 
-apply plugin: 'android-reporting'
-//apply plugin: 'com.android.library'
-//apply plugin: 'android-maven'
-//apply plugin: 'maven'
-plugins {
-    id 'maven-publish'
-}
